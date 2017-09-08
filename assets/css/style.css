@@ -1,0 +1,28 @@
+body {
+	margin: 0 auto;
+	/*background-image: url("https://www.hdwallpapers.in/walls/abstract_color_background_picture_8016-wide.jpg");*/
+	/*background-image: url("../images/abstract_color_background_picture_8016-wide.jpg");
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: black;*/
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+	text-align: center;
+}
+
+section {
+	text-align: center;
+}
+
+button {
+	padding: 20px;
+	width: 40%;
+}
+

@@ -13,7 +13,7 @@
 	<!-- My CSS -->
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
      <!-- JQuery -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 	
 	<title>Trivia Game</title>
 
@@ -32,83 +32,38 @@
     	</div>
 	</div>
 
-	<div id="jumbotron-body" class="jumbotron">
-  		<div class container>
-  			<div class="row">
-    			<div class="col-md-12">
-    				
-	                <div class="col-md-7">
-					<section>
-    						
-						<h2>
-							How To Play
-						</h2>
-						<div class="divider">
-						</div>
-
-	                    <p>
-	                    	You will be given a random number at the start of the game.
-	                    </p>
-	                    <p>
-	                    	There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.
-	                    </p>
-	                    <p>
-	                    	You win the game by matching your total score to the random number, you lose the game if your total score goes above the random number.
-	                    </p>
-	                    <p>
-	                    	The value of each crystal is hidden from you until you click on it.
-	                    </p>
-	                    <p>
-	                    	Each time when the game starts, the game will change the value of each crystal.
-	                    </p>
-	                
-	                	<div class="divider">
-						</div>
-                    	
-                    	<div id="crystals">
-                    	</div>
+ <div id="jumbotron-header" class="jumbotron">
+        <div class container>
+            <div class="row">
+                <div class="col-md-12">
+                    <section>
                     
-                    	<h2>Total Score</h2>
-    					<div class="divider">
-    						
-    					</div>
-                    	<h2 id="userScore">
-                    	</h2>
-                    
-    				</div>
-    				</section>	
-    				
-                    <div class="col-md-3">
-    				<section>
-    					
-    					<h2>Target Number</h2>
-    					<div class="divider">
-    					</div>
-    					<h2 id="randomTarget">
-    					</h2>
-    						
-    				</section>		
-    				</div>
-	                 
-	                 <div class="col-md-2">               
-	                 <section>
-	                            
-                        <h2 id="wins">
-                            Wins:
-                        </h2>
-                        <div class="divider">
-					
-						</div>
-                        <h2 id="losses">
-                        	Losses:
-                        </h2>  
-                                
-	                 </section>           
-	                 </div>
-    			</div>
-    		</div>
-    	</div>
-	</div>
+                        <button id="start">Start
+                        </button>
+                        
+                        <div id="timer">
+                        </div>
+                        
+                        <div id="questions">
+                        </div>
+                        
+                        <div id="wrong-right">
+                        </div>
+                        
+                        <div id="answer">
+                        </div>
+                        
+                        <button id="multiple-choices">
+                        </button>
+                        
+                        <div id="image-gif">
+                        </div>
+                        
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -116,6 +71,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     
     <!-- My Javascript  -->
-    <script type="text/javascript" src="assets/javascript/game.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>   
 </html>
+                
+                        
+                    
