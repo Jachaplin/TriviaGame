@@ -1,46 +1,50 @@
 $(document).ready(function() {
 
   var questions = {
-  	q1: "Is the sky blue?",
-  	q2: "Is dirt brown?"
-  	// q3: "Is this bootcamp hard?",
-  	// q4: "Will you succeed in this program?",
+  	q1: "What is Neo's real name?",
+  	q2: "What are the Agents after?",
+  	q3: "When taken, what color was the pill Morpheus offers that allows the recipient to wake up from the Matrix?",
+  	q4: "What is the first martial art form Neo learns?"
   }
   
   var questionIndex = 0
 
-  var questionsArray = [questions.q1, questions.q2]
-  // , questions.q3, questions.q4]
+  var questionsArray = [questions.q1, questions.q2, questions.q3, questions.q4]
+  
 
   var answers = {
-    a1: ["green", "blue", "yellow", "pink"],
-    a2: ["blue", "pink", "brown", "black"]
+    a1: ["John P. Black", "Thomas A. Anderson", "James L. Burns", "Peter N. Fitzgerald"],
+    a2: ["Neo", "The Oracle", "Access codes to the Zion mainframe", "The Lady in the Red Dress"],
+    a3: ["red", "yellow", "green", "blue"],
+    a4: ["Judo", "Taekwondo", "Jujutsu", "Kung Fu"]
   }
 
   var answersIndex = 0
 
-  var answersArray = [answers.a1, answers.a2]
+  var answersArray = [answers.a1, answers.a2, answers.a3, answers.a4]
   
-  var displayAnswer = ["blue", "brown"]
+  var displayAnswer = ["Thomas A. Anderson", "Access codes to the Zion mainframe", "blue", "Kung Fu"]
 
   var displayAnswerIndex = 0
 
   var answerValues = {
     v1: [0, 1, 0, 0],
-    v2: [0, 0, 1, 0]
+    v2: [0, 0, 1, 0],
+    v3: [1, 0, 0, 0],
+    v4: [0, 0, 0, 1]
   }
 
   var ValuesIndex = 0
 
-  var correctGif = ["https://giphy.com/embed/3oz8xNsv8x0UgtYvn2", "https://giphy.com/embed/l2YWCz0kmmgdx8feM"]
+  var correctGif = ["https://giphy.com/embed/Mtln6vg7Ph4Yw", "https://giphy.com/embed/BJLIhJQIcgnPa", "https://giphy.com/embed/113P5us0pgBcpa", "https://giphy.com/embed/3o7btNhMBytxAM6YBa"]
 
   var correctGifIndex = 0 
 
-  var incorrectGif = ["https://giphy.com/embed/hkMXte9dBJFfO", "https://giphy.com/embed/BiDSHFS0HFzoY"]
+  var incorrectGif = ["https://giphy.com/embed/G1C40uYwoBTby", "https://giphy.com/embed/nGnKGLOqzhfGM", "https://giphy.com/embed/hmbAsOkRpwtri", "https://giphy.com/embed/VLCrn1EUswFO"]
 
   var incorrectGifIndex = 0
 
-  var outOfTimeGif = ["", ""]
+  var outOfTimeGif = ["https://giphy.com/embed/3ornjXizVZDbngmjRK", "https://giphy.com/embed/xAsQU9jATql1e", "https://giphy.com/embed/7cGl3Eyng4Vj2", "https://giphy.com/embed/l0IyhWl9rB1J9vyw0"]
 
   var outOfTimeGifIndex = 0
 
@@ -54,7 +58,7 @@ $(document).ready(function() {
 
 
 
-  var answerValues = [answerValues.v1, answerValues.v2]
+  var answerValues = [answerValues.v1, answerValues.v2, answerValues.v3, answerValues.v4]
 
   $("#start").click(renderQ1Answers)
   
@@ -72,38 +76,35 @@ $(document).ready(function() {
   }
 
   function startOver() {
-        var startOverButton = $("<button>Start Over?</button>")
-        $("#start-over").append(startOverButton)
+      var startOverButton = $("<button>Start Over?</button>")
+      $("#start-over").append(startOverButton)
         
         $("#start-over").on("click", function() {
-        
-        reset()
-        
-        
-     
-      })
+          reset()
+          
+        })
   }
 
   function reset() {
-    $("#multiple-choice").empty()
-    $("#start-over").empty()
-    $("#timer").empty()
-    $("#correct-answers-score").empty()
-    $("#incorrect-answer-score").empty()
-    $("#unanswered-score").empty()
-    correctAnswers = 0
-    incorrectAnswers = 0
-    unAnswered = 0
-    questionIndex = 0
-    answersIndex = 0
-    ValuesIndex = 0
-    displayAnswerIndex = 0
-    correctGifIndex = 0
-    incorrectGifIndex = 0
-    outOfTimeGifIndex = 0
-    stoptimer()
-    renderQuestion()
-    renderQ1Answers()
+      $("#multiple-choice").empty()
+      $("#start-over").empty()
+      $("#timer").empty()
+      $("#correct-answers-score").empty()
+      $("#incorrect-answer-score").empty()
+      $("#unanswered-score").empty()
+      correctAnswers = 0
+      incorrectAnswers = 0
+      unAnswered = 0
+      questionIndex = 0
+      answersIndex = 0
+      ValuesIndex = 0
+      displayAnswerIndex = 0
+      correctGifIndex = 0
+      incorrectGifIndex = 0
+      outOfTimeGifIndex = 0
+      stoptimer()
+      renderQuestion()
+      renderQ1Answers()
     
   }
 
@@ -115,35 +116,37 @@ $(document).ready(function() {
       ValuesIndex++
       questionIndex++
       outOfTimeGifIndex++
+  
   }
   
   function renderQuestion() {
-        // If there are still more questions, render the next one.
-        if (questionIndex <= (questionsArray.length - 1)) {
-          document.getElementById("questions").innerHTML = questionsArray[questionIndex]
-          console.log(questionsArray[questionIndex])
-          console.log(correctAnswers)
-          
-          }
+      // If there are still more questions, render the next one.
+      if (questionIndex <= (questionsArray.length - 1)) {
+        document.getElementById("questions").innerHTML = questionsArray[questionIndex]
+        console.log(questionsArray[questionIndex])
+        console.log(correctAnswers)
+        
+        }
   }
 
 
   function timer() {
-        intervalId = setInterval(countDown, 1000)
-        document.getElementById("timer").innerHTML = "Time remaining: " + timeLeft
-        console.log(timeLeft)
+      intervalId = setInterval(countDown, 1000)
+      document.getElementById("timer").innerHTML = "Time remaining: " + timeLeft
+      console.log(timeLeft)
   }
 
   function countDown () {
-    timeLeft--
-    document.getElementById("timer").innerHTML = "Time remaining: " + timeLeft
-    console.log(timeLeft)
-      if (timeLeft <= 0) {
-        $("#timer").empty()
-        stoptimer()
-        outOfTime()
+      timeLeft--
+      document.getElementById("timer").innerHTML = "Time remaining: " + timeLeft
+      console.log(timeLeft)
         
-      }
+        if (timeLeft <= 0) {
+          $("#timer").empty()
+          stoptimer()
+          outOfTime()
+            
+          }
   }
 
   function stoptimer() {
@@ -161,9 +164,9 @@ $(document).ready(function() {
       $("#image-gif").html("<iframe src=" + correctGif[correctGifIndex] + " width='480' height='270' frameBorder='0' class='giphy-embed' allowFullScreen></iframe>")
       correctAnswers++
       indexAdder()
-      setTimeout(clear, 3000)
-      setTimeout(renderQuestion, 3000)
-      setTimeout(renderQ1Answers, 3000)
+      setTimeout(clear, 6000)
+      setTimeout(renderQuestion, 6000)
+      setTimeout(renderQ1Answers, 6000)
   }
 
   function wrong() {
@@ -174,15 +177,16 @@ $(document).ready(function() {
         $("#image-gif").html("<iframe src=" + incorrectGif[incorrectGifIndex] + " width='480' height='270' frameBorder='0' class='giphy-embed' allowFullScreen></iframe>")
       incorrectAnswers++
       indexAdder()
-      setTimeout(clear, 3000)  
-      setTimeout(renderQuestion, 3000)
-      setTimeout(renderQ1Answers, 3000)
+      setTimeout(clear, 6000)  
+      setTimeout(renderQuestion, 6000)
+      setTimeout(renderQ1Answers, 6000)
 
   }
 
   function outOfTime() {
       document.getElementById("questions").innerHTML = displayAnswer[displayAnswerIndex]
       $("#multiple-choice").empty()
+      $("#image-gif").html("<iframe src=" + outOfTimeGif[outOfTimeGifIndex] + " width='480' height='270' frameBorder='0' class='giphy-embed' allowFullScreen></iframe>")
         indexAdder()
         
         unAnswered++
@@ -190,8 +194,8 @@ $(document).ready(function() {
 
       // $("#image-gif").html("<iframe src=" + incorrectGif[incorrectGifIndex] + " width='480' height='270' frameBorder='0' class='giphy-embed' allowFullScreen></iframe>")
       
-      setTimeout(renderQuestion, 3000)
-      setTimeout(renderQ1Answers, 3000)
+      setTimeout(renderQuestion, 6000)
+      setTimeout(renderQ1Answers, 6000)
   }
 
   function clear() {
@@ -288,3 +292,6 @@ $(document).ready(function() {
 
 
 
+        
+        
+     

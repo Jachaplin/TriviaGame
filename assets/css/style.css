@@ -1,11 +1,14 @@
 body {
 	margin: 0 auto;
 	/*background-image: url("https://www.hdwallpapers.in/walls/abstract_color_background_picture_8016-wide.jpg");*/
-	/*background-image: url("../images/abstract_color_background_picture_8016-wide.jpg");
+	background-image: url("../images/body-background.gif");
 	background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    background-color: black;*/
+    background-color: black;
+    color: white;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 20px;
 
 }
 
@@ -19,14 +22,69 @@ h1 {
 
 section {
 	text-align: center;
+
+	background-image: url("../images/Section-Background.jpg");
+	background-size: cover;
+	background-position: center center;
+	/*background-color: white;*/
+	width: 80%;
+	margin: auto;
+	height: 600px;
+	padding: 20px;
+	border: 1px solid black;
+
+	
 }
 
 button {
 	padding: 20px;
 	width: 60%;
+	color: black;
+	border: 2px solid black;
+	background-color: green;
+	margin: 5px;
+	font-size: 13px;
+
 }
 
-.display {
-	display: show
+
+
+#jumbotron-header {
+	background-image: url("../images/matrix-banner.png");
+	padding: 70px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+}
+
+#jumbotron-body {
+	background-image: url("../images/giphy-downsized-large.gif");
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+	width: 65%;
+	margin: 30px auto 30px auto;
+	height: auto;
+	/*overflow: auto;*/
+	
+}
+
+iframe {
+	width: 100%;
+	height: auto;
+	margin-right: auto !important;
+	margin-left: auto !important;
+	margin-top: 50px;
+	float: none;
+	
+
+}
+
+#image-gif {
+	
+	margin-right: auto !important;
+	margin-left: auto !important;
+	float: none;
+
 }
 
