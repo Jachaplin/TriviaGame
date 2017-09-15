@@ -36,7 +36,7 @@ $(document).ready(function() {
 
   var ValuesIndex = 0
 
-  var correctGif = ["https://giphy.com/embed/Mtln6vg7Ph4Yw", "https://giphy.com/embed/BJLIhJQIcgnPa", "https://giphy.com/embed/113P5us0pgBcpa", "https://giphy.com/embed/3o7btNhMBytxAM6YBa"]
+  var correctGif = ["https://giphy.com/embed/Mtln6vg7Ph4Yw", "https://giphy.com/embed/saD01LsKDzxL2", "https://giphy.com/embed/113P5us0pgBcpa", "https://giphy.com/embed/3o7btNhMBytxAM6YBa"]
 
   var correctGifIndex = 0 
 
